@@ -1,7 +1,7 @@
 import React from 'react';
 
 async function getBlogById(id) {
-  const res = await fetch(`http://localhost:4000/blogs/${id}`); // Replace with the deployed API if needed
+  const res = await fetch(` https://jsonplaceholder.typicode.com/posts/${id}`); // Replace with the deployed API if needed
   return res.json();
 }
 

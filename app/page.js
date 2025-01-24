@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 async function getBlogs(){
-  const res = await fetch('http://localhost:4000/blogs')
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   return res.json()
 }
 
