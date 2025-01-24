@@ -23,14 +23,30 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="mb-20">
-          <ul className="flex gap-6">
-            <li><Link href='/'>Home</Link></li>
-            <li><Link href='/profile'>Profile</Link></li>
-            <li><Link href='/login'>Login</Link></li>
-            <li><Link href='/register'>Register</Link></li>
-          </ul>
+        <nav className="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-4">
+              <div className="text-xl font-semibold">
+                <Link href="/" className="hover:text-gray-200 transition duration-300">Brand</Link>
+              </div>
+              <ul className="flex gap-6">
+                <li>
+                  <Link href="/" className="hover:text-gray-200 transition duration-300">Home</Link>
+                </li>
+                <li>
+                  <Link href="/profile" className="hover:text-gray-200 transition duration-300">Profile</Link>
+                </li>
+                <li>
+                  <Link href="/login" className="hover:text-gray-200 transition duration-300">Login</Link>
+                </li>
+                <li>
+                  <Link href="/register" className="hover:text-gray-200 transition duration-300">Register</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </nav>
+
         {children}
       </body>
     </html>
