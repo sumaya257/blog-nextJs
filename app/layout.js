@@ -3,6 +3,7 @@ import "./globals.css";
 import Link from "next/link";
 import { AuthProvider } from "./authprovider/AuthProvider";
 import { RegisterLink, LoginLink, LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
+
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
 const geistSans = Geist({
@@ -22,7 +23,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   // Server-side authentication check inside a server component
-  const { isAuthenticated } = await getKindeServerSession();
+  const {isAuthenticated} = getKindeServerSession();
+   const isUserAuthenticated = await isAuthenticated();
 
   return (
     <AuthProvider>
@@ -63,7 +65,7 @@ export default async function RootLayout({ children }) {
                   </li>
 
                   {/* Authentication Links */}
-                  {!isAuthenticated ? (
+                  {!isUserAuthenticated ? (
                     <>
                       <li>
                         <LoginLink className="hover:text-gray-200 transition duration-300">
